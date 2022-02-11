@@ -4,7 +4,7 @@
 
 @section('content')
   <form action="{{route('salvar')}}" method="post">
-    {{-- {{csrf_field()}} --}}
+    {{csrf_field()}}
 
     <div class="field">
       <label for="nome">Nome:</label>
@@ -19,6 +19,10 @@
     <div class="field">
       <label for="nome">Senha:</label>
       <input type="text" name="senha" id="senha">
+    </div>
+
+    <div class="btn">
+      <button type="submit">Salvar</button>
     </div>
 
   </form>
