@@ -25,6 +25,7 @@ class Usuario extends Model
         $sql = self::insert([
             "nome" => $request->input('nome'),
             "email" => $request->input('email'),
+            "senha" => Hash::make($reques->input('senha')),
             "data_cadastro" => DB::raw('NOW()'),
         ]);
 
