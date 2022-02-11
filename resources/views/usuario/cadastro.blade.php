@@ -3,5 +3,5 @@
 @section('title', 'Cadastro de usuário')
 
 @section('content')
-  <p>Formulário</p>
+  <form action="{{route('salvar')}}"></form>
 @endsection

@@ -12,7 +12,7 @@
 */
 
 Route::get('/', 'Usuario@cadastrar');
-Route::post('/salvar', 'Usuario@cadastrar');
+Route::post('/salvar', 'Usuario@cadastrar')->name('salvar');
 
 //Route::match(['get','post' ],'/',)
 
