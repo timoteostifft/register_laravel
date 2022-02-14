@@ -18,7 +18,7 @@ class Usuario extends Controller
             'senha' => 'required|min:5'
         ]);
 
-        UsuarioModel::cadastrar($request)
+        UsuarioModel::cadastrar($request);
         
         return view('usuario.sucesso');
     }
