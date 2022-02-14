@@ -14,7 +14,8 @@ class Usuario extends Model
     protected $table = 'usuario';
 
     public static function listar(int $limite){
-        $sql = self::select([
+        $sql = self::where("id",">",2)
+        ->select([
             "id",
             "nome",
             "email",
@@ -22,19 +23,19 @@ class Usuario extends Model
         ])
         ->limit($limite);
 
-        dd($sql->toSql());
+        return $sql;
     }
 
     public static function cadastrar(Request $reques){
-        DB::enableQueryLog();
+        // DB::enableQueryLog();
         
-        self::insert([
+        return self::insert([
             "nome" => $request->input('nome'),
             "email" => $request->input('email'),
             "senha" => Hash::make($reques->input('senha')),
             "data_cadastro" => new Carbon(),
         ]);
 
-        dd(DB::getQueryLog());
+        // dd(DB::getQueryLog());
     }
 }
